@@ -7,16 +7,14 @@ import (
 	"github.com/go-chi/httplog"
 )
 
-type PlagiarismComparison struct {
-	Default string `json:"default"`
-}
-
 func PlagiarismComparisonHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		logger := httplog.LogEntry(r.Context())
 		w.Header().Set("Content-Type", "application/json")
-		res := &PlagiarismFinder{
-			Default: "I am a default response",
+		res := &PlagiarismResponse{
+			Documents: []string{
+				"This is a default response",
+			},
 		}
 
 		response, err := json.Marshal(res)
