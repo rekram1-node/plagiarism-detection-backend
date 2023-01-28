@@ -15,6 +15,9 @@ dist
 
 # binary
 plagiarism-backend
+w2vModel.bin
+w2vModel.bin.zip
+
 
 # misc
 *.ignore
