@@ -20,7 +20,7 @@ func PlagiarismComparisonHandler(model *text.Word2Vec) http.HandlerFunc {
 			return
 		}
 
-		res, err := compare(docs)
+		res, err := compare(docs, model)
 		if err != nil {
 			logger.Info().Err(err).Msg("failed to compare documents")
 			writeResponse(w, http.StatusInternalServerError, map[string]string{"error": err.Error()})

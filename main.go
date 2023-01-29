@@ -67,6 +67,7 @@ func main() {
 }
 
 func loadModel(filename string) *text.Word2Vec {
+	// something
 	if os.Getenv("DEBUG") != "" {
 		return &text.Word2Vec{}
 	}

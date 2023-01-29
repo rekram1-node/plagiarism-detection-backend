@@ -24,8 +24,8 @@ github.com/mattn/go-isatty v0.0.14/go.mod h1:7GGIvUiUoEMVVmxf/4nioHXj79iQHKdU27k
 github.com/neurosnap/sentences v1.1.1 h1:xiQDOMESh5FEyWNw3kK6a6Wv6j4FXZS1V2ejt1icIuI=
 github.com/neurosnap/sentences v1.1.1/go.mod h1:/pwU4E9XNL21ygMIkOIllv/SMy2ujHwpf8GQPu1YPbQ=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
-github.com/rekram1-node/text-processor v0.4.0 h1:Djv/cd91wWD90TDx3VNHjlPmQWr3tBVUQgfKGA5P728=
-github.com/rekram1-node/text-processor v0.4.0/go.mod h1:tIu3pkS05Y6A58t4KcTPHZKYrRAtnvpMNuPDkmumrh0=
+github.com/rekram1-node/text-processor v0.5.0 h1:gr3sdhk1UTA+EUwQPLjpzOTRW1gSBlNd5XMN4ZDuUqU=
+github.com/rekram1-node/text-processor v0.5.0/go.mod h1:tIu3pkS05Y6A58t4KcTPHZKYrRAtnvpMNuPDkmumrh0=
 github.com/rs/xid v1.3.0/go.mod h1:trrq9SKmegXys3aeAKXMUTdJsYXVwGY3RLcfgqegfbg=
 github.com/rs/zerolog v1.27.0 h1:1T7qCieN22GVc8S4Q2yuexzBb1EqjbgjSH9RohbMjKs=
 github.com/rs/zerolog v1.27.0/go.mod h1:7frBqO0oezxmnO7GF86FY++uy8I0Tk/If5ni1G9Qc0U=
