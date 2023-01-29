@@ -17,3 +17,7 @@ type PlagiarismResponse struct {
 		SimilarityScore   float64 `json:"similarityScore"`
 	} `json:"paragraphs"`
 }
+
+type PlagiarismRequest struct {
+	Documents []string `json:"documents"`
+}
