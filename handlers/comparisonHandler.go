@@ -16,6 +16,7 @@ func PlagiarismComparisonHandler(model *text.Word2Vec, debug bool) http.HandlerF
 		if debug {
 			w.WriteHeader(http.StatusOK)
 			_, _ = w.Write(mockResponse)
+			return
 		}
 
 		docs, err := getDocumentsFromBody(w, r)
