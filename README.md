@@ -5,6 +5,9 @@
 
 This was made for TAMU HACK 2023, backend currently only supports comparisons between 2 documents. If we had the time this would have also had a functional search endpoint that would use the NLP and google to find more documents with a similar vector score and then process them for potential plagiarism. For more cool descriptions and information see my library that I made: [NLP Library](https://github.com/rekram1-node/text-processor). (NLP stands for natural language processing)
 
+Small Note:
+This was made on a short timeframe and the backend and library both are far from ideal in terms of permormance, if I had time I would implement concurrency to shorten all of the for loop processes
+
 TAMU HACK RELATED REPOS:
 - [Frontend](https://github.com/rekram1-node/plagiarism-detection-frontend)
 - [NLP Library](https://github.com/rekram1-node/text-processor)

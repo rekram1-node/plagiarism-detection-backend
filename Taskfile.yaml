@@ -35,11 +35,11 @@ tasks:
     vars:
       BUILD_FLAGS: '{{default "" .BUILD_FLAGS}}'
   
-  build-container:
-    deps: [ clean ]
+  build:docker:
+    desc: "creates docker image with compiled application"
+    deps: [ clean, build ]
     cmds:
-      - task: build
-        var: { BUILD_ARCH: amd64, BUILD_OS: linux }
+      - docker build . -t {{.ECR_REGISTRY}}/{{.ECR_REPO_NAME}}:{{.RELEASE_VERSION}} -f Dockerfile
 
   run:
     deps: [ build ]
