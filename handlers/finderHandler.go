@@ -5,9 +5,10 @@ import (
 	"net/http"
 
 	"github.com/go-chi/httplog"
+	"github.com/rekram1-node/text-processor/text"
 )
 
-func PlagiarismFinderHandler() http.HandlerFunc {
+func PlagiarismFinderHandler(model *text.Word2Vec) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		logger := httplog.LogEntry(r.Context())
 		w.Header().Set("Content-Type", "application/json")

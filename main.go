@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"log"
 	"net/http"
 	"os"
 	"os/signal"
@@ -11,13 +12,20 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/httplog"
 	"github.com/rekram1-node/plagiarism-detection-backend/handlers"
+	"github.com/rekram1-node/text-processor/text"
 )
 
 const (
-	listenAddr = ":3000"
+	listenAddr   = ":3000"
+	w2vModelName = "w2vModel.bin"
+)
+
+var (
+	DEBUG bool = false
 )
 
 func main() {
+	model := loadModel(w2vModelName)
 	logger := httplog.NewLogger("httplog-example", httplog.Options{
 		JSON: true,
 	})
@@ -25,8 +33,8 @@ func main() {
 	r := chi.NewRouter()
 	r.Use(httplog.RequestLogger(logger))
 	r.Route("/plagiarism", func(r chi.Router) {
-		r.Get("/find", handlers.PlagiarismFinderHandler())
-		r.Post("/compare", handlers.PlagiarismComparisonHandler())
+		r.Get("/find", handlers.PlagiarismFinderHandler(model))
+		r.Post("/compare", handlers.PlagiarismComparisonHandler(model, DEBUG))
 	})
 
 	server := &http.Server{
@@ -60,4 +68,20 @@ func main() {
 	}
 
 	logger.Info().Msg("Server Exited Properly")
+}
+
+func loadModel(filename string) *text.Word2Vec {
+	// something
+	if os.Getenv("DEBUG") != "" {
+		DEBUG = true
+		return &text.Word2Vec{}
+	}
+
+	model, err := text.LoadModel(filename)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return model
 }
