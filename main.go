@@ -20,6 +20,10 @@ const (
 	w2vModelName = "w2vModel.bin"
 )
 
+var (
+	DEBUG bool = false
+)
+
 func main() {
 	model := loadModel(w2vModelName)
 	logger := httplog.NewLogger("httplog-example", httplog.Options{
@@ -30,7 +34,7 @@ func main() {
 	r.Use(httplog.RequestLogger(logger))
 	r.Route("/plagiarism", func(r chi.Router) {
 		r.Get("/find", handlers.PlagiarismFinderHandler(model))
-		r.Post("/compare", handlers.PlagiarismComparisonHandler(model))
+		r.Post("/compare", handlers.PlagiarismComparisonHandler(model, DEBUG))
 	})
 
 	server := &http.Server{
@@ -69,6 +73,7 @@ func main() {
 func loadModel(filename string) *text.Word2Vec {
 	// something
 	if os.Getenv("DEBUG") != "" {
+		DEBUG = true
 		return &text.Word2Vec{}
 	}
 

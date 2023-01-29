@@ -8,10 +8,15 @@ import (
 	"github.com/rekram1-node/text-processor/text"
 )
 
-func PlagiarismComparisonHandler(model *text.Word2Vec) http.HandlerFunc {
+func PlagiarismComparisonHandler(model *text.Word2Vec, debug bool) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		logger := httplog.LogEntry(r.Context())
 		w.Header().Set("Content-Type", "application/json")
+
+		if debug {
+			w.WriteHeader(http.StatusOK)
+			_, _ = w.Write(mockResponse)
+		}
 
 		docs, err := getDocumentsFromBody(w, r)
 		if err != nil {
