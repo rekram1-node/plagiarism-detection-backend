@@ -1,6 +1,6 @@
 # Plagiarism Detection Backend
 
-[![Go Report](https://goreportcard.com/badge/github.com/rekram1-node/plagiarism-detection-backend)](https://goreportcard.com/report/github.com/rekram1-node/plagiarism-detection-backend) [![license](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://github.com/rekram1-node/plagiarism-detection-backend/blob/main/LICENSE) ![Build Status](https://github.com/rekram1-node/plagiarism-detection-backend/actions/workflows/main.yml/badge.svg)
+[![Go Report](https://goreportcard.com/badge/github.com/rekram1-node/plagiarism-detection-backend)](https://goreportcard.com/report/github.com/rekram1-node/plagiarism-detection-backend) [![license](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://github.com/rekram1-node/plagiarism-detection-backend/blob/main/LICENSE) ![Build Status](https://github.com/rekram1-node/plagiarism-detection-backend/actions/workflows/pullRequest.yml/badge.svg)
 
 
 This was made for TAMU HACK 2023, backend currently only supports comparisons between 2 documents. If we had the time this would have also had a functional search endpoint that would use the NLP and google to find more documents with a similar vector score and then process them for potential plagiarism. For more cool descriptions and information see my library that I made: [NLP Library](https://github.com/rekram1-node/text-processor). (NLP stands for natural language processing)
