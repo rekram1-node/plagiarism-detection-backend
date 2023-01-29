@@ -12,6 +12,77 @@ TAMU HACK RELATED REPOS:
 - [Frontend](https://github.com/rekram1-node/plagiarism-detection-frontend)
 - [NLP Library](https://github.com/rekram1-node/text-processor)
 
+## What it does
+
+### Example Input
+
+```json
+{
+   "documents": [
+        "Colonialism had a destabilizing effect on what had been a number of ethnic groups that is still being felt in African politics. Before European influence, national borders were not much of a concern, with Africans generally following the practice of other areas of the world, such as the Arabian peninsula, where a group's territory was congruent with its military or trade influence. In the 1870s European nations were bickering over themselves about the spoils ofAfrica. In order to prevent further conflict between them, they convened at the Berlin Conference of 1884-1885 to lay down the rules on how they would partition up Africa between themselves. Between 1870 and World War I alone, the European scramble for Africa resulted in the adding of around one-fifth of the land area of the globe to its overseas colonial possessions.",
+        "Colonialism had a destabilizing effect on what had been a number of ethnic groups that is still being felt in African politics. In the 1870s European nations were bickering over themselves about the spoils of Africa. Between 1870 and World War I alone, the European scramble for Africa resulted in the adding of around one-fifth of the land area of the globe to its overseas colonial possessions. Prior to European influence, national borders were not much of a concern, with Africans generally following the practice of other areas of the world, such as the Arabian peninsula, where a group's territory was congruent with its military or trade influence."
+    ]
+}
+```
+
+### Example Output
+
+```json
+{
+    "documents": [
+        "Colonialism had a destabilizing effect on what had been a number of ethnic groups that is still being felt in African politics. Before European influence, national borders were not much of a concern, with Africans generally following the practice of other areas of the world, such as the Arabian peninsula, where a group's territory was congruent with its military or trade influence. In the 1870s European nations were bickering over themselves about the spoils ofAfrica. In order to prevent further conflict between them, they convened at the Berlin Conference of 1884-1885 to lay down the rules on how they would partition up Africa between themselves. Between 1870 and World War I alone, the European scramble for Africa resulted in the adding of around one-fifth of the land area of the globe to its overseas colonial possessions.",
+        "Colonialism had a destabilizing effect on what had been a number of ethnic groups that is still being felt in African politics. In the 1870s European nations were bickering over themselves about the spoils of Africa. Between 1870 and World War I alone, the European scramble for Africa resulted in the adding of around one-fifth of the land area of the globe to its overseas colonial possessions. Prior to European influence, national borders were not much of a concern, with Africans generally following the practice of other areas of the world, such as the Arabian peninsula, where a group's territory was congruent with its military or trade influence."
+    ],
+    "sentences": [
+        {
+            "sourceSentence": "Before European influence, national borders were not much of a concern, with Africans generally following the practice of other areas of the world, such as the Arabian peninsula, where a group's territory was congruent with its military or trade influence.",
+            "sourceID": 0,
+            "comparedSentence": "Prior to European influence, national borders were not much of a concern, with Africans generally following the practice of other areas of the world, such as the Arabian peninsula, where a group's territory was congruent with its military or trade influence.",
+            "comparedID": 1,
+            "similarityScore": 0.9913556575775146
+        },
+        {
+            "sourceSentence": "In the 1870s European nations were bickering over themselves about the spoils ofAfrica.",
+            "sourceID": 0,
+            "comparedSentence": "In the 1870s European nations were bickering over themselves about the spoils of Africa.",
+            "comparedID": 1,
+            "similarityScore": 0.9508470296859741
+        },
+        {
+            "sourceSentence": "In order to prevent further conflict between them, they convened at the Berlin Conference of 1884-1885 to lay down the rules on how they would partition up Africa between themselves.",
+            "sourceID": 0,
+            "comparedSentence": "Between 1870 and World War I alone, the European scramble for Africa resulted in the adding of around one-fifth of the land area of the globe to its overseas colonial possessions.",
+            "comparedID": 1,
+            "similarityScore": 0.5141378045082092
+        },
+        {
+            "sourceSentence": "Between 1870 and World War I alone, the European scramble for Africa resulted in the adding of around one-fifth of the land area of the globe to its overseas colonial possessions.",
+            "sourceID": 0,
+            "comparedSentence": "Between 1870 and World War I alone, the European scramble for Africa resulted in the adding of around one-fifth of the land area of the globe to its overseas colonial possessions.",
+            "comparedID": 1,
+            "similarityScore": 0.9999997615814209
+        },
+        {
+            "sourceSentence": "Colonialism had a destabilizing effect on what had been a number of ethnic groups that is still being felt in African politics.",
+            "sourceID": 0,
+            "comparedSentence": "Colonialism had a destabilizing effect on what had been a number of ethnic groups that is still being felt in African politics.",
+            "comparedID": 1,
+            "similarityScore": 0.9999996423721313
+        }
+    ],
+    "paragraphs": [
+        {
+            "sourceParagraph": "Colonialism had a destabilizing effect on what had been a number of ethnic groups that is still being felt in African politics. Before European influence, national borders were not much of a concern, with Africans generally following the practice of other areas of the world, such as the Arabian peninsula, where a group's territory was congruent with its military or trade influence. In the 1870s European nations were bickering over themselves about the spoils ofAfrica. In order to prevent further conflict between them, they convened at the Berlin Conference of 1884-1885 to lay down the rules on how they would partition up Africa between themselves. Between 1870 and World War I alone, the European scramble for Africa resulted in the adding of around one-fifth of the land area of the globe to its overseas colonial possessions. ",
+            "sourceID": 0,
+            "comparedParagraph": "Colonialism had a destabilizing effect on what had been a number of ethnic groups that is still being felt in African politics. In the 1870s European nations were bickering over themselves about the spoils of Africa. Between 1870 and World War I alone, the European scramble for Africa resulted in the adding of around one-fifth of the land area of the globe to its overseas colonial possessions. Prior to European influence, national borders were not much of a concern, with Africans generally following the practice of other areas of the world, such as the Arabian peninsula, where a group's territory was congruent with its military or trade influence. ",
+            "comparedID": 1,
+            "similarityScore": 0.9846670627593994
+        }
+    ],
+    "overallsimilarityScore": 0.984667
+}
+```
+
 
 ## Getting Started
 
@@ -39,8 +110,17 @@ task run
 ```
 
 ### Run with Mocked Responses
+
+MACOS, LINUX:
+
 ```shell
 DEBUG=true task run
+```
+
+WINDOWS:
+
+```shell
+$DEBUG=$true; task run
 ```
 
 ## Issues
